@@ -43,9 +43,9 @@ public class ST4_Verify_SendMessage {
 
         DynamicLoadPage verifyMessage= new DynamicLoadPage();
         String expected= "Hello, please give me a call";
-        String actual= talkWebElement.displayedMessage.getText();
+        String actual= verifyMessage.displayedMessage.getText();
 
-        Assert.assertTrue(talkWebElement.equals(expected));
+        Assert.assertTrue(actual.equals(expected));
 
 
 
