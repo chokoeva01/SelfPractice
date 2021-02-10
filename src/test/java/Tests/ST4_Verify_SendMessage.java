@@ -4,6 +4,9 @@ import Pages.DynamicLoadPage;
 import Pages.LoginPage;
 import Utilities.ConfigurationReader;
 import Utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ST4_Verify_SendMessage {
@@ -27,8 +30,24 @@ public class ST4_Verify_SendMessage {
         talkWebElement.talk.click();
 
         DynamicLoadPage converstionUsers= new DynamicLoadPage();
-        converstionUsers.conversationsUsers.sendKeys("Hello world");
         converstionUsers.conversationsUsers.click();
+
+        DynamicLoadPage webUser10= new DynamicLoadPage();
+        webUser10.user10.click();
+
+        DynamicLoadPage messageBox=new DynamicLoadPage();
+        messageBox.writeMessage.sendKeys("Hello, please give me a call");
+
+        DynamicLoadPage submitMessage= new DynamicLoadPage();
+        submitMessage.sendMessage.click();
+
+        DynamicLoadPage verifyMessage= new DynamicLoadPage();
+        String expected= "Hello, please give me a call";
+        String actual= talkWebElement.displayedMessage.getText();
+
+        Assert.assertTrue(talkWebElement.equals(expected));
+
+
 
 
 
@@ -46,5 +65,11 @@ public class ST4_Verify_SendMessage {
       // WebElement: Talk css: a[aria-label='Talk']
 
       // WebElement SearchConversations box xpath //input[@type='text']
+
+    //WebElement user10  xpath  //span[@class='acli__content__line-one__title']")
+
+    //WebElement writeMessage  xpath //div[@contenteditable='contenteditable'] and (class= "new-message-form__advancedinput")
+
+//WebElement submitMessage css [class='new-message-form__button submit icon-confirm-fade']class= new-message-form__button submit icon-confirm-fade
 
 }

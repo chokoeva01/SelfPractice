@@ -48,4 +48,17 @@ public class DynamicLoadPage {
     @FindBy(xpath = "//input[@type='text']")
     public WebElement conversationsUsers;
 
+    @FindBy(xpath = "//span[@class='acli__content__line-one__title']")
+    public WebElement user10;
+
+    @FindBy(className= "new-message-form__advancedinput")
+    public WebElement writeMessage;
+
+    @FindBy (css = "[class='new-message-form__button submit icon-confirm-fade]")
+    public WebElement sendMessage;
+
+    @FindBy (className = "rich-text--wrapper")
+    public WebElement displayedMessage;
+
+
 }
