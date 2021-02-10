@@ -1,7 +1,9 @@
 package Tests;
+import Pages.DynamicLoadPage;
 import Pages.LoginPage;
 import Utilities.ConfigurationReader;
 import Utilities.Driver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ST4_Talks_TitleVerification {
@@ -22,7 +24,14 @@ public class ST4_Talks_TitleVerification {
         loginPage.loginButton.click();
 
 
-       // DynamicLoadPage talkWebElement= new DynamicLoadPage();
+       DynamicLoadPage talkWebElement= new DynamicLoadPage();
+       String expected= "talk";
+       String actual= talkWebElement.talk.getText();
+
+        Assert.assertTrue(talkWebElement.talk.isDisplayed());
+       // Assert.assertTrue(actual.contains(expected));
+
+
 
 
 
